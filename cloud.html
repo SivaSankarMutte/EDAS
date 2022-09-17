@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cloud Data</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+			$("button").click(function(){
+				$.get("https://api.thingspeak.com/channels/1858441/feeds.json?api_key=ACJ4WHW86KGB09FS&results=2",function(data,status)
+				{
+					var json=JSON.stringify(data);
+					document.getElementById("p1").innerText=json;
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="jumbotron bg-primary"><h1>EDAS</h1></div>
+	<div class="jumbotron bg-info">
+		<h2>Welcome to EDAS!</h2>
+		<button class="btn-success rounded">Get Data</button>
+		<p id="p1"></p>
+	</div>
+</body>
+</html>
+
+
+
