@@ -10,7 +10,7 @@
 		$(document).ready(function()
 		{
 			$("button").click(function(){
-				$.get("https://api.thingspeak.com/channels/1858441/feeds.json?api_key=ACJ4WHW86KGB09FS&results=2",function(data,status)
+				$.get("https://api.thingspeak.com/channels/1858441/fields/1.json?api_key=ACJ4WHW86KGB09FS&results=2",function(data,status)
 				{
 					var json=JSON.stringify(data);
 					document.getElementById("p1").innerText=json;
